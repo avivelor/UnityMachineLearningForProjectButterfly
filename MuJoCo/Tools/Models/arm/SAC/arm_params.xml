@@ -1,0 +1,195 @@
+<mujoco model="2-dof arm">
+
+    <option timestep="0.005" iterations="50" solver="Newton" tolerance="1e-10"/>
+    <compiler inertiagrouprange="0 1"/>
+
+    <size njmax="50" nconmax="10" nstack="200"/>
+
+    <visual>
+        <rgba haze=".3 .3 .3 1"/>
+    </visual>
+    <!-############### Load stl files in for visual (and density) purposes -->
+    <asset>
+
+    </asset>
+
+    <default>
+        <!-- <joint type="hinge" pos="0 0 0" axis="0 0 0" limited="true" range="0 120" damping="0.1"/> -->
+        <muscle ctrllimited="true" ctrlrange="0 1"/>
+    </default>
+
+    <asset>
+        <texture type="skybox" builtin="gradient" rgb1="0.6 0.6 0.6" rgb2="0 0 0" width="512" height="512"/>
+
+        <texture name="texplane" type="2d" builtin="checker" rgb1=".25 .25 .25" rgb2=".3 .3 .3" width="512" height="512" mark="cross" markrgb=".8 .8 .8"/>
+
+        <material name="matplane" reflectance="0.3" texture="texplane" texrepeat="1 1" texuniform="true"/>
+
+        <mesh name="Sh_mr_2" file="Mujoco_Models/Motor_and_Mount.stl" scale=".001 .001 .001" refquat="0 1 -1 0" refpos="74 18 -186"/>
+        <!-- <mesh name="Sh_mr_2" file="Mujoco_Models/Motor_and_Mount.stl" scale=".001 .001 .001" /> -->
+
+        <mesh name="Sh_j_2" file="Mujoco_Models/Ball_and_Pathing.stl" scale=".001 .001 .001" refquat="0 1 -1 0" refpos="74 18 -186"/>
+
+        <mesh name="Sh_r_2" file="Mujoco_Models/Upper_Arm_Rod.stl" scale=".001 .001 .001" refquat="0 1 -1 0" refpos="74 18 -186"/>
+
+        <mesh name="Sh_j_1" file="Mujoco_Models/Shoulder_Socket.stl" scale=".01 .01 .01" refquat="0 1 -1 0" refpos="7.4 1.8 -18.6"/>
+
+        <mesh name="Elb_j_1" file="Mujoco_Models/UpperElbowV1.stl" scale=".001 .001 .001" refquat="0 1 -1 0" refpos="74 18 -186"/>
+
+        <mesh name="Elb_j_2" file="Mujoco_Models/LowerElbowV1.stl" scale=".001 .001 .001" refquat="0 1 -1 0" refpos="74 18 -186"/>
+
+
+
+        <!--Geometry for the Shoulder Base-->
+        <mesh name="Base_Motor" file="Mujoco_Models/Motor_and_Mount.stl" scale=".001 .001 .001" refquat="0 1 -1 0" refpos="74 18 -186"/>
+        <mesh name="Base_Socket" file="Mujoco_Models/Shoulder_Socket.stl" scale=".01 .01 .01" refquat="0 1 -1 0" refpos="7.4 1.8 -18.6"/>
+        <mesh name="Base_Pathing" file="Mujoco_Models/Motor_Pathing_Socket.stl" scale=".01 .01 .01" refquat="0 1 -1 0" refpos="7.4 1.8 -18.6"/>
+
+        <!--Geometry for the Upper Arm -->
+        <mesh name="UA_Rod" file="Mujoco_Models/Upper_Arm_Rod.stl" scale=".001 .001 .001" refquat="0 1 -1 0" refpos="74 18 -186"/>
+        <mesh name="UA_Ball" file="Mujoco_Models/Shoulder_Ball.stl" scale=".01 .01 .01" refquat="0 1 -1 0" refpos="7.4 1.8 -18.6"/>
+        <mesh name="UA_Pathing" file="Mujoco_Models/Motor_Pathing_Ball.stl" scale=".01 .01 .01" refquat="0 1 -1 0" refpos="7.4 1.8 -18.6"/>
+        <mesh name="UA_Elbow_Socket" file="Mujoco_Models/UpperElbowV1.stl" scale=".001 .001 .001" refquat="0 1 -1 0" refpos="74 18 -186"/>
+        <mesh name="UA_Motor" file="Mujoco_Models/Bicep_Motor.stl" scale=".01 .01 .01" refquat="0 1 -1 0" refpos="7.4 1.8 -18.6"/>
+
+
+
+        <!--Geometry for the Lower Arm  -->
+        <mesh name="LA_Rod" file="Mujoco_Models/Lower_Arm_Rod.stl" scale=".01 .01 .01" refquat="0 1 -1 0" refpos="7.4 1.8 -18.6"/>
+        <mesh name="LA_Cylinder" file="Mujoco_Models/Elbow_Cylinder.stl" scale=".01 .01 .01" refquat="0 1 -1 0" refpos="7.4 1.8 -18.6"/>
+
+
+    </asset>
+
+    <worldbody>
+
+
+        <geom name="floor" pos="0 0 0" size="0 0 1" type="plane" material="matplane"/>
+
+        <light directional="true" diffuse=".8 .8 .8" specular=".2 .2 .2" pos="0 0 5" dir="0 0 -1"/>
+        <camera name="camera"/>
+
+
+        <!-- <body name='test'>
+            <geom name='testg' size='.001'/>
+            <geom type="mesh" mesh='Ball_Hatched_2' size='.001 .001 .001'/>
+        </body> -->
+
+        <!-- ############ TESTING STL ################### -->
+        <!-- <geom name="t1" type="mesh" mesh='Base_Motor'  pos="0 1 2"/>
+        <geom name="t2" type="mesh" mesh='Base_Socket' pos="0 1 2"/>
+        <geom name="t3" type="mesh" mesh='Base_Pathing' pos="0 1 2"/>
+        <geom name="t4" type="mesh" mesh='UA_Rod'  pos="0 1 2"/>
+        <geom name="t5" type="mesh" mesh='UA_Ball' pos="0 1 2"/>
+        <geom name="t6" type="mesh" mesh='UA_Pathing' pos="0 1 2"/>
+        <geom name="t7" type="mesh" mesh='UA_Elbow_Socket' pos="0 1 2"/>
+        <geom name="t8" type="mesh" mesh='LA_Rod' pos="0 1 2"/>
+        <geom name="t9" type="mesh" mesh='LA_Cylinder' pos="0 1 2"/> -->
+
+
+        <!-- <geom name="1" type="mesh" mesh='Sh_j_1' size='.001 .001 .001' pos="0 1 2"/>
+        <geom name="2" type="mesh" mesh='Sh_mr_2' size='.001 .001 .001' pos="0 1 2"/>
+        <geom name="3" type="mesh" mesh='Sh_j_2' size='.001 .001 .001' pos="0 1 2"/>
+        <geom name="4" type="mesh" mesh='Sh_r_2' size='.001 .001 .001' pos="0 1 2"/>
+        <geom name="5" type="mesh" mesh='Elb_j_1' size='.001 .001 .001' pos="0 1 2"/>
+        <geom name="6" type="mesh" mesh='Elb_j_2' size='.001 .001 .001' pos="0 1 2"/> -->
+
+        <body name="base" pos ="0 0 2">
+          <!--Geometry for the Shoulder Base-->
+          <geom name='Base_Motor' type="mesh" mesh='Base_Motor' pos="0 0 0"  mass="204.7"/>
+          <geom name='Base_Socket' type="mesh" mesh='Base_Socket' pos="0 0 0" mass="86.5" />
+          <geom name='Base_Pathing' type="mesh" mesh='Base_Pathing' pos="0 0 0" mass="30"/>
+
+          <site name="sm_2" pos="0 -.031 .05" size="0.005" rgba=".5 .5 0 .5"/>
+          <site name="sm_1" pos="0 -.08 .04" size="0.005" rgba=".5 .5 0 .5"/>
+
+          <!-- ########################### Shoulder  ###########################-->
+          <body name= "UA" pos="0 0 0">
+
+              <!-- <geom name="upper arm" type="cylinder" size="0.008" fromto="0 0 0  0 0 -.32" rgba=".5 .1 .1 1"/> -->
+              <!-- <joint name= "shoulder" type="hinge" pos="0 0 0" axis="1 0 0" limited="true" range="-20 80" damping="1.859"/> -->
+              <!-- <joint name= "shoulder" type="hinge" pos="0 0 0" axis="1 0 0" limited="true" range="-20 95" damping="1.859" springref="0" stiffness="100"/> -->
+              <!-- <joint name= "shoulder" type="hinge" pos="0 0 0" axis="1 0 0" limited="true" range="-20 95" springref="0" springdamper="1.3 2"/> -->
+              <joint name= "shoulder" type="hinge" pos="0 0 0" axis="1 0 0" limited="true" range="-20 95" springref="0" springdamper=".1081 .1664"/>
+
+              <!--Geometry for the Upper Arm -->
+              <geom name="shoulder" type="sphere" pos="0 0 0" size=".03 .03" rgba=".9 .7 .7 .3" mass = "0"/>
+
+              <geom name="UA_Ball" type="mesh" mesh='UA_Ball' mass="73"/>
+              <geom name="UA_Rod" type="mesh" mesh='UA_Rod' rgba="0 0 0 1" mass="15.3"/>
+              <geom name="UA_Pathing" type="mesh" mesh='UA_Pathing' mass="35"/>
+              <geom name="UA_Elbow_Socket" type="mesh" mesh='UA_Elbow_Socket' mass="52.8"/>
+              <geom name="UA_Motor" type="mesh" mesh='UA_Motor' mass="204.7" />
+
+
+
+              <!-- <site name="sb_1" pos="0 .05 .018" size="0.005" rgba=".5 .5 0 .5"/> -->
+              <site name="sb_1" pos="0 .035 .018" size="0.005" rgba=".5 .5 0 .5"/>
+              <site name="sb_2" pos="0 .035 -.03" size="0.005" rgba=".5 .5 0 .5"/>
+              <site name="s_ins" pos="0 .01 -.12" size="0.005" rgba=".5 .5 0 .5"/>
+              <site name="s2" pos="-.03 -.02 -.28" size="0.005" rgba=".5 .5 0 .5"/>
+
+              <site name="sh_side" pos=".02 .02 .1" size="0.005" rgba="0 0 0 0"/>
+
+              <!-- ########################### Elbow ###########################-->
+              <body name="LA" pos="-.01 0 -.37" >
+
+                <!--Geometry for the Upper Arm -->
+                  <geom name="LA_Rod" type="mesh" mesh='LA_Rod' pos=".01 0 .37" rgba="0 0 0 1" mass="15.3"/>
+                  <geom name="LA_Cylinder" type="mesh" mesh='LA_Cylinder' pos=".01 0 .37" mass="42"/>
+
+                  <geom name="elbow" type="sphere" pos="0 0 0" size=".03 .03" rgba=".7 .9 .7 .3" mass="0"/>
+
+
+                  <!-- <joint name= "elbow" type="hinge" pos="0 0 0" axis="0 1 0" limited="true" range="0 80" springdamper="4 4"/> -->
+
+                  <joint name= "elbow" type="hinge" pos="0 0 0" axis="0 1 0" limited="true" ref="-30" range="-80 50" springdamper=".23 .75" springref="30"
+                    />
+
+                  <!-- <geom name="elbowLower_ball" type="mesh" mesh='Elb_j_2' size='.001 .001 .001' mass="0"/> -->
+
+                  <site name="s3" pos="-0.06 -0.0025 -0.035" size="0.005" rgba=".5 .5 0 .5"/>
+              </body>
+
+          </body>
+        </body>
+    </worldbody>
+
+    <contact>
+      <exclude body1="UA" body2="base"/>
+      <exclude body1="LA" body2="UA"/>
+      <exclude body1="LA" body2="base"/>
+    </contact>
+
+
+
+    <tendon>
+
+      <spatial name="Shoulder_t" width="0.001" rgba = ".3 .3 0 .8">
+          <site site="sm_1"/>
+          <site site="sm_2"/>
+          <geom geom="shoulder" sidesite="sh_side"/>
+          <site site="sb_1"/>
+          <site site="sb_2"/>
+          <site site="s_ins"/>
+      </spatial>
+      <!-- ##Bicep## -->
+      <spatial name="Elbow_t" width="0.001" rgba = ".3 .3 0 .8">
+          <site site="s2"/>
+          <!-- <geom geom="elbow"/> -->
+          <site site="s3"/>
+      </spatial>
+    </tendon>
+
+
+    <actuator>
+      <muscle name="Shoulder" tendon="Shoulder_t" scale="400" force="1000000" ctrlrange="-1 1" lmin="0" lmax="2" fpmax =".8" timeconst=".02 .04" vmax=".5"/>
+      <muscle name="Bicep" tendon="Elbow_t" scale = "100" fpmax = ".8" ctrlrange="-1 1" vmax=".5"/>
+      <!-- <general name="shoulder" tendon="Shoulder_t" gear = "1/500" ctrlrange= "-2550 2550" forcelimited='true' forcerange="-200000 200000"/> -->
+      <!-- <general name="bicep" tendon="Elbow_t" gear = "1/500" ctrlrange= "-2550 2550" forcelimited='true' forcerange="-200000 200000"/> -->
+      <!-- <velocity name="shoulder" tendon="Shoulder_t" gear = "400000" kv="100" ctrlrange="0 100000"/> -->
+      <!-- <muscle name="Shoulder" tendon="Shoulder_t" scale="400" force="200"/> -->
+      <!-- <velocity name="Shoulder" tendon="Shoulder_t" gear = "500" ctrlrange= "-255 255" forcelimited='true' forcerange="-2000 0" kv="5"  lengthrange="0 .01"/> -->
+      <!-- <velocity name="Bicep" tendon="Elbow_t" gear = "300" ctrlrange= "-1 1" forcerange="0 1000" kv="20" lengthrange="0 20"/> -->
+    </actuator>
+</mujoco>

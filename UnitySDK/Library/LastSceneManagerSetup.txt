@@ -1,0 +1,5 @@
+sceneSetups:
+- path: Assets/ML-Agents/Examples/CM244-ExoArm/Scenes/ExoArm.unity
+  isLoaded: 1
+  isActive: 1
+  isSubScene: 0

@@ -1,0 +1,27 @@
+Tue May 14 18:34:43 2019
+ERROR: Could not open activation key file mjkey.txt
+
+Tue Jun  4 16:58:27 2019
+ERROR: Could not open activation key file mjkey.txt
+
+Mon Jun 24 15:08:32 2019
+ERROR: GLEW initalization error: Missing GL version
+
+Mon Jun 24 15:09:25 2019
+ERROR: GLEW initalization error: Missing GL version
+
+Mon Jun 24 15:15:38 2019
+ERROR: GLEW initalization error: Missing GL version
+
+Mon Jun 24 15:23:27 2019
+ERROR: GLEW initalization error: Missing GL version
+
+Mon Jun 24 15:24:36 2019
+ERROR: GLEW initalization error: Missing GL version
+
+Tue Jun 25 12:22:16 2019
+ERROR: Could not open activation key file mjkey.txt
+
+Tue Jun 25 12:22:35 2019
+ERROR: Could not open activation key file mjkey.txt
+

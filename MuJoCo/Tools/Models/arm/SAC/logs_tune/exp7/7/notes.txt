@@ -1,0 +1,3 @@
+num_trials=7
+lr=0.001
+arch={'act_fun': <function tanh at 0x7f61b20ccb70>, 'layers': [128, 128]}

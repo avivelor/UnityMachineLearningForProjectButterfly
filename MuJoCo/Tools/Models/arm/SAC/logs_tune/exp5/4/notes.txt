@@ -1,0 +1,1 @@
+num_trials=4lr=5e-05

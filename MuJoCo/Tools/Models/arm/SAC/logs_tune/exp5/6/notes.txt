@@ -1,0 +1,1 @@
+num_trials=6lr=1e-05

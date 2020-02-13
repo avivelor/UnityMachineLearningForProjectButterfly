@@ -1,0 +1,3 @@
+num_trials=19
+lr=0.0005
+arch={'act_fun': <function sigmoid at 0x7f76aea1f0d0>, 'layers': [128, 16]}

@@ -1,0 +1,20 @@
+MuJoCo Pro Personal license activation key, number 66154, type 6.
+
+Issued to Erik Jung <eajung@ucsc.edu>.
+
+Expires February 22, 2020.
+
+This file activates MuJoCo Pro on a single computer with id:
+LINUX_PZG1OSmN6D94a_R201S3Bsg456uF0377MS0nS150
+
+Do not modify this file. Its entire content, including the
+plain text section, is used by the activation manager.
+
+d7637c89e6191ebca26d2f0d5780575e187dd788de12b251f9f6b3ef6dc32cfb
+748c488a9a36bffc29dec86d16aadce5fcf76a937a3274999963ee28ba42be0b
+6d23aa5fb4ff9864a2ec34b48d0244449578f29c8ec5c8a9d3348431dcb7358f
+d754ad86c362b468e97315b036734c456358f7be3287a38b89cc07fe898c4245
+432840de07c2909bb4fa0dbf091bfbe360f96551b8fa40bbc8683cdd035407fe
+77a8e4209aeecc78947cf2dbe82d6dae27f86f5cd2ec1bde7fd850c1724a61e3
+e5447d04676330410fb7bd4e52f04aa721b603703dc08b313a1c8e3faa4101eb
+18f91270e605995cbe2ec9371772bd1dd02f8cd35e64741cd45563f3a492de72

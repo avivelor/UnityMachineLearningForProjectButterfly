@@ -1,0 +1,1 @@
+num_trials=2lr=0.0002
