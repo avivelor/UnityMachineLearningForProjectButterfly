@@ -14,7 +14,7 @@ In a nut shell, download Anaconda and setup a virtual environment through conda 
 Enter the training scene at the following:
 
 ```sh
-~D:\A-UnityML-Projects\UnityMachineLearningForProjectButterfly\UnitySDK\Assets\ML-Agents\Examples\CM244-ExoArm\Scenes\ExoArm
+~\UnitySDK\Assets\ML-Agents\Examples\CM202-ExoArm\Scenes\
 ```
 
 With the anaconda terminal, prepare to train through using the following terminal command:
