@@ -36,7 +36,7 @@ See the demo video below for a discussion of the training, results, and demo exp
 [![IMAGE ALT TEXT](http://img.youtube.com/vi/5J7xes28bZA/0.jpg)](http://www.youtube.com/watch?v=5J7xes28bZA "Demo Video")
 
 Demo Materials:
-* Standalone Downloadable Demo (Stable) - link TBD
+* Standalone Downloadable Demo (Stable) - https://github.com/avivelor/UnityMachineLearningForProjectButterfly/raw/master/UnitySDK/ExoButterfly-StandaloneBuild.zip
 * Video Demo - https://youtu.be/5J7xes28bZA
 * Blog Posts - https://www.avivelor.com/
 
