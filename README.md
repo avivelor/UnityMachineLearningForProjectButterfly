@@ -43,6 +43,7 @@ Demo Materials:
 External Tools Used and Modified for this Project:
 * Unity Machine Learning Agents Beta - https://github.com/Unity-Technologies/ml-agents
 * Project Butterfly - https://www.avivelor.com/post/project-butterfly
+* Unity ML Agents Introduction - https://towardsdatascience.com/an-introduction-to-unity-ml-agents-6238452fcf4c
 * Unity ML Agents Reacher Example - https://github.com/Unity-Technologies/ml-agents/tree/master/Project/Assets/ML-Agents/Examples/Reacher
 * Older Unity ML Reacher Example by PHRABAL  - https://github.com/PHRABAL/DRL-Reacher
 * Proximal Policy Optimization (PPO) - https://github.com/Unity-Technologies/ml-agents/blob/master/docs/Training-PPO.md
