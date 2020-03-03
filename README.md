@@ -29,7 +29,7 @@ Now sit back and let the model train. After checkpoints are saved, you can use t
 tensorboard --logdir=summaries
 ```
 
-Subsquently, I was able to train the robot arm very well through utilizing 16 agents in parallel through Deep Reinforcement Learning (by Deep Deterministic Policy Gradient or DDPG).
+Subsquently, I was able to train the robot arm very well through utilizing 16 agents in parallel through Deep Reinforcement Learning.
 After four hours of training, my reward slowly rose from 0.1 to 40 (where +0.01 reward was given per every frame the arm successfuly protected the butterfly).
 See the demo video below for a discussion of the training, results, and demo experience.
 
