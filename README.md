@@ -29,7 +29,7 @@ Now sit back and let the model train. After checkpoints are saved, you can use t
 tensorboard --logdir=summaries
 ```
 
-Subsquently, I was able to train the robot arm very well through utilizing 16 agents in parallel through Deep Reinforcement Learning (by Deep Deterministic Policy Gradient or DDPG).
+Subsquently, I was able to train the robot arm very well through utilizing 16 agents in parallel through Deep Reinforcement Learning.
 After four hours of training, my reward slowly rose from 0.1 to 40 (where +0.01 reward was given per every frame the arm successfuly protected the butterfly).
 See the demo video below for a discussion of the training, results, and demo experience.
 
@@ -43,6 +43,7 @@ Demo Materials:
 External Tools Used and Modified for this Project:
 * Unity Machine Learning Agents Beta - https://github.com/Unity-Technologies/ml-agents
 * Project Butterfly - https://www.avivelor.com/post/project-butterfly
+* Unity ML Agents Introduction - https://towardsdatascience.com/an-introduction-to-unity-ml-agents-6238452fcf4c
 * Unity ML Agents Reacher Example - https://github.com/Unity-Technologies/ml-agents/tree/master/Project/Assets/ML-Agents/Examples/Reacher
 * Older Unity ML Reacher Example by PHRABAL  - https://github.com/PHRABAL/DRL-Reacher
 * Proximal Policy Optimization (PPO) - https://github.com/Unity-Technologies/ml-agents/blob/master/docs/Training-PPO.md
