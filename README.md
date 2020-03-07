@@ -2,15 +2,71 @@
 
 Aviv Elor - aelor@ucsc.edu - avivelor1@gmail.com
 
-An exploration of Unity ML Agents on training a "robo arm" to protect butterflies with bubble shields in an immersive virtual environment.
-This project utilizes Reinforcement Learning through Proximal Policy Optimization to train a Virtual Robot Arm to play an Immersive Virtual Reality Physical Exercise Game.
+What if we could train a virtual robot arm to guide us through our physical exercises, compete with us, and test out various double jointed movements?
+This project is an exploration of Unity ML Agents on training a double jointed "robo arm" to protect butterflies with bubble shields in an immersive virtual environment.
+The arm is trained through of utilizing General Adversarial Imitation Learning (GAIL) and Reinforcement Learning through Proximal Policy Optimization (PPO) to play an Immersive Virtual Reality Physical Exercise Game.
 Overall, this was a fun deep dive into exploring Machine Learning through mlagents -- the project could definitely be polished if I have more time.
-Feel free to try out the standalone build if you want attempt to predict torque values for two joints better than a neural network!
+Feel free to try out the standalone build if you want attempt to predict torque values for two joints better than a neural network, or compete head to head with a neural network driven arm for the same VR exercise game!
 
 If any questions, email aelor@ucsc.edu and or message Aviv Elor.
 
-To mess around with training, refer to the Unity ML-Agents Documentation at https://github.com/Unity-Technologies/ml-agents/blob/master/docs/Readme.md.
-In a nut shell, download Anaconda and setup a virtual environment through conda activate mlagents (see this example to configure your environment https://github.com/Unity-Technologies/ml-agents/blob/master/docs/Readme.md).
+# Imitation Learning and Virtual Reality Gameplay
+
+To explore imitation learning with PPO, refer to the Unity ML-Agents Documentation at https://github.com/Unity-Technologies/ml-agents/blob/master/docs/Readme.md and https://github.com/Unity-Technologies/ml-agents/blob/master/docs/Training-Imitation-Learning.md .
+This section explored the application of General Adversarial Imitation Learning (GAIL) with Deep Reinforcement Learning through Proximal Policy Optimization (PPO).
+Demonstrations were recorded with an HTC Vive 2018 VR System by utilizing two 2018 Vive Trackers on a human demonstrator's shoulder and elbow joint to capture torque and angular momentum using Unity's Fixed Joint API.
+
+To get strated, download Anaconda and setup a virtual environment through conda activate mlagents (see this example to configure your environment https://github.com/Unity-Technologies/ml-agents/blob/master/docs/Readme.md).
+Enter the training scene at the following:
+
+```sh
+~\UnitySDK\Assets\ML-Agents\Examples\CM202-ExoArm\Scenes\
+```
+
+To capture demonstrations in VR, place the SteamVR trackers at the elbow and shoulder joint of the human user. 
+Set the Observations of the agent to be "Heuristic Only." 
+Check the record demonstration box in the Demonstration Recorder script and have the human user perform ideal and consise movements.
+After recording the demonstration, update the config yaml files to point to demonstration for GAIL.
+
+Pre-recorded demonstrations for Project Butterfly can be found at:
+```sh
+~\UnitySDK\Assets\Demonstrations\
+```
+
+Training configuration with GAIL for Project Butterfly can be found at:
+```sh
+~\config\trainer_config_exoarm.yaml
+```
+
+After demonstrations are recorded, proceed back to the training scene to begin agent learning.
+With the anaconda terminal, prepare to train through using the following terminal command:
+
+```sh
+mlagents-learn config/gail_config_exoimitationarm.yaml --run-id=<run-identifier> --train --time-scale=100
+```
+
+Now sit back and let the model train. After checkpoints are saved, you can use tensorboard to examine the model's performance:
+
+```sh
+tensorboard --logdir=summaries
+```
+
+The trained model for this section can be found at:
+
+```sh
+~\models\ImitationButterfly-0\ExoReacher.nn
+or
+~\UnitySDK\Assets\ML-Agents\Examples\CM202-ExoArm\TFModels\ImitationReacher\
+```
+
+A demo video of this section can be found at: TBD
+
+[![IMAGE ALT TEXT](http://img.youtube.com/vi/5J7xes28bZA/0.jpg)](http://www.youtube.com/watch?v=5J7xes28bZA "Imitation Learning Demo Video")
+
+# Reinforcement Learning and Non-VR Based Gameplay
+
+To mess around with deep reinforcement learning and training, refer to the Unity ML-Agents Documentation at https://github.com/Unity-Technologies/ml-agents/blob/master/docs/Readme.md.
+To get strated, download Anaconda and setup a virtual environment through conda activate mlagents (see this example to configure your environment https://github.com/Unity-Technologies/ml-agents/blob/master/docs/Readme.md).
 Enter the training scene at the following:
 
 ```sh
@@ -20,7 +76,7 @@ Enter the training scene at the following:
 With the anaconda terminal, prepare to train through using the following terminal command:
 
 ```sh
-mlagents-learn config/trainer_config.yaml --run-id=<run-identifier> --train --time-scale=100
+mlagents-learn config/trainer_config_exoarm.yaml --run-id=<run-identifier> --train --time-scale=100
 ```
 
 Now sit back and let the model train. After checkpoints are saved, you can use tensorboard to examine the model's performance:
@@ -29,15 +85,29 @@ Now sit back and let the model train. After checkpoints are saved, you can use t
 tensorboard --logdir=summaries
 ```
 
-Subsquently, I was able to train the robot arm very well through utilizing 16 agents in parallel through Deep Reinforcement Learning.
+Subsquently, I was able to train the robot arm very well through utilizing 16 agents in parallel through Deep Reinforcement Learning with Proximal Policy Optimization (PPO).
 After four hours of training, my reward slowly rose from 0.1 to 40 (where +0.01 reward was given per every frame the arm successfuly protected the butterfly).
 See the demo video below for a discussion of the training, results, and demo experience.
 
-[![IMAGE ALT TEXT](http://img.youtube.com/vi/5J7xes28bZA/0.jpg)](http://www.youtube.com/watch?v=5J7xes28bZA "Demo Video")
+The trained model for this section can be found at:
 
-Demo Materials:
+```sh
+~\models\ExoReacherPBF-0\ExoReacher.nn
+or
+~\UnitySDK\Assets\ML-Agents\Examples\CM202-ExoArm\TFModels\ExoReacher\
+```
+
+A demo video of this section can be found at: https://youtu.be/5J7xes28bZA
+
+[![IMAGE ALT TEXT](http://img.youtube.com/vi/5J7xes28bZA/0.jpg)](http://www.youtube.com/watch?v=5J7xes28bZA "Reinforcement Learning Demo Video")
+
+# Materials and References
+
+Materials:
+* Virtual Reality Demo (HTC Vive, Stable) - https://github.com/avivelor/UnityMachineLearningForProjectButterfly/blob/master/UnitySDK/ExoButteflyVR-SteamVR-Build.zip
 * Standalone Downloadable Demo (Stable) - https://github.com/avivelor/UnityMachineLearningForProjectButterfly/raw/master/UnitySDK/ExoButterfly-StandaloneBuild.zip
-* Video Demo - https://youtu.be/5J7xes28bZA
+* Imitation Learning and Human vs Neural Network Research Video - TBD
+* Early Reinforcement Learning Demo Video - https://youtu.be/5J7xes28bZA
 * Blog Posts - https://www.avivelor.com/
 
 External Tools Used and Modified for this Project:
@@ -46,7 +116,8 @@ External Tools Used and Modified for this Project:
 * Unity ML Agents Introduction - https://towardsdatascience.com/an-introduction-to-unity-ml-agents-6238452fcf4c
 * Unity ML Agents Reacher Example - https://github.com/Unity-Technologies/ml-agents/tree/master/Project/Assets/ML-Agents/Examples/Reacher
 * Older Unity ML Reacher Example by PHRABAL  - https://github.com/PHRABAL/DRL-Reacher
-* Proximal Policy Optimization (PPO) - https://github.com/Unity-Technologies/ml-agents/blob/master/docs/Training-PPO.md
+* Proximal Policy Optimization (PPO) in Unity - https://github.com/Unity-Technologies/ml-agents/blob/master/docs/Training-PPO.md
+* General Adversarial Imitation Learning (GAIL) in Unity - https://github.com/Unity-Technologies/ml-agents/blob/master/docs/Training-Imitation-Learning.md
 * Deep Reinforcement Learning (through Deep Deterministic Policy Gradient or DDPG) -  https://arxiv.org/pdf/1509.02971.pdf
 
 Reading References:
