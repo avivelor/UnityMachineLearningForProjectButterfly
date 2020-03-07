@@ -1,0 +1,16 @@
+{
+  "source": "Unity",
+  "applications": [
+    {
+      "app_key": "application.generated.unity.exobutterfly.exe",
+      "launch_type": "url",
+      "url": "steam://launch/",
+      "action_manifest_path": "C:\\Users\\avivelor\\Documents\\A-UnityML-Projects\\exobutterfly\\UnitySDK\\Assets\\StreamingAssets\\SteamVR\\actions.json",
+      "strings": {
+        "en_us": {
+          "name": "ExoButterfly [Testing]"
+        }
+      }
+    }
+  ]
+}
