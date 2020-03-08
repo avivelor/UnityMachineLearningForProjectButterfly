@@ -104,7 +104,7 @@ A demo video of this section can be found at: https://youtu.be/5J7xes28bZA
 # Materials and References
 
 Materials:
-* Virtual Reality Demo (HTC Vive, Stable) - https://github.com/avivelor/UnityMachineLearningForProjectButterfly/blob/master/UnitySDK/ExoButterflyVR-HTCViveBuild.zip
+* Virtual Reality Demo (HTC Vive, Stable) - https://github.com/avivelor/UnityMachineLearningForProjectButterfly/raw/master/UnitySDK/ExoButterflyVR-HTCViveBuild.zip
 * Standalone Downloadable Demo (Stable) - https://github.com/avivelor/UnityMachineLearningForProjectButterfly/raw/master/UnitySDK/ExoButterfly-StandaloneBuild.zip
 * Imitation Learning and Human vs Neural Network Research Video - https://youtu.be/ckMaDXHUGrw
 * Early Reinforcement Learning Demo Video - https://youtu.be/5J7xes28bZA
