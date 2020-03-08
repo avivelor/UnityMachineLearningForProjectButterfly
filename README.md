@@ -61,7 +61,7 @@ or
 
 A demo video of this section can be found at: TBD
 
-[![IMAGE ALT TEXT](http://img.youtube.com/vi/5J7xes28bZA/0.jpg)](http://www.youtube.com/watch?v=5J7xes28bZA "Imitation Learning Demo Video")
+[![IMAGE ALT TEXT](http://img.youtube.com/vi/ckMaDXHUGrw/0.jpg)](http://www.youtube.com/watch?v=ckMaDXHUGrw "Imitation Learning Demo Video")
 
 # Reinforcement Learning and Non-VR Based Gameplay
 
@@ -106,7 +106,7 @@ A demo video of this section can be found at: https://youtu.be/5J7xes28bZA
 Materials:
 * Virtual Reality Demo (HTC Vive, Stable) - https://github.com/avivelor/UnityMachineLearningForProjectButterfly/blob/master/UnitySDK/ExoButteflyVR-SteamVR-Build.zip
 * Standalone Downloadable Demo (Stable) - https://github.com/avivelor/UnityMachineLearningForProjectButterfly/raw/master/UnitySDK/ExoButterfly-StandaloneBuild.zip
-* Imitation Learning and Human vs Neural Network Research Video - TBD
+* Imitation Learning and Human vs Neural Network Research Video - https://youtu.be/ckMaDXHUGrw
 * Early Reinforcement Learning Demo Video - https://youtu.be/5J7xes28bZA
 * Blog Posts - https://www.avivelor.com/
 
