@@ -59,7 +59,7 @@ or
 ~\UnitySDK\Assets\ML-Agents\Examples\CM202-ExoArm\TFModels\ImitationReacher\
 ```
 
-A demo video of this section can be found at: TBD
+A demo video of this section can be found at: https://youtu.be/ckMaDXHUGrw
 
 [![IMAGE ALT TEXT](http://img.youtube.com/vi/ckMaDXHUGrw/0.jpg)](http://www.youtube.com/watch?v=ckMaDXHUGrw "Imitation Learning Demo Video")
 
