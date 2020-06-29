@@ -5,7 +5,7 @@ Aviv Elor - aelor@ucsc.edu - avivelor1@gmail.com
 What if we could train a virtual robot arm to guide us through our physical exercises, compete with us, and test out various double-jointed movements?
 This project is an exploration of Unity ML-Agents on training a double-jointed "robot arm" to protect butterflies with bubble shields in an immersive virtual environment.
 The arm is trained through utilizing General Adversarial Imitation Learning (GAIL) and Reinforcement Learning through Proximal Policy Optimization (PPO) to play an Immersive Virtual Reality Physical Exercise Game.
-Overall, this was a fun, deep dive into exploring Machine Learning through mlagents -- the project could definitely be polished if I have more time.
+Overall, this was a fun, deep dive into exploring Machine Learning through mlagents.
 Feel free to try out the standalone build if you want to attempt to predict torque values for two joints better than a neural network, or use the VR build to compete head to head with a neural network-driven arm for the same VR exercise game!
 
 If any questions, email aelor@ucsc.edu and or message Aviv Elor.
