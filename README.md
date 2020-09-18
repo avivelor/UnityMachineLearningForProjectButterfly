@@ -2,6 +2,11 @@
 
 Aviv Elor - aelor@ucsc.edu - avivelor1@gmail.com
 
+
+It's official, we've been published! More details behind this project can be found at the following manuscript: 
+*Elor, A., & Kurniawan, S. (2020, September). Deep Reinforcement Learning in Immersive Virtual Reality Exergame for Agent Movement Guidance. In 2020 IEEE 8th International Conference on Serious Games and Applications for Health(SeGAH). IEEE, 2020.* (link TBD)
+
+
 What if we could train a virtual robot arm to guide us through our physical exercises, compete with us, and test out various double-jointed movements?
 This project is an exploration of Unity ML-Agents on training a double-jointed "robot arm" to protect butterflies with bubble shields in an immersive virtual environment.
 The arm is trained through utilizing General Adversarial Imitation Learning (GAIL) and Reinforcement Learning through Proximal Policy Optimization (PPO) to play an Immersive Virtual Reality Physical Exercise Game.
