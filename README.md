@@ -4,7 +4,7 @@ Aviv Elor - aelor@ucsc.edu - avivelor1@gmail.com
 
 
 It's official, we've been published! More details behind this project can be found at the following manuscript: 
-*[Elor, A., & Kurniawan, S. (2020, August). Deep Reinforcement Learning in Immersive Virtual Reality Exergame for Agent Movement Guidance. In 2020 IEEE 8th International Conference on Serious Games and Applications for Health(SeGAH). IEEE, 2020.]*(https://www.researchgate.net/publication/344380137_Deep_Reinforcement_Learning_in_Immersive_Virtual_Reality_Exergame_for_Agent_Movement_Guidance)
+[*Elor, A., & Kurniawan, S. (2020, August). Deep Reinforcement Learning in Immersive Virtual Reality Exergame for Agent Movement Guidance. In 2020 IEEE 8th International Conference on Serious Games and Applications for Health(SeGAH). IEEE, 2020.*](https://www.researchgate.net/publication/344380137_Deep_Reinforcement_Learning_in_Immersive_Virtual_Reality_Exergame_for_Agent_Movement_Guidance)
 
 
 What if we could train a virtual robot arm to guide us through our physical exercises, compete with us, and test out various double-jointed movements?
